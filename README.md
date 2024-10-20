@@ -1,58 +1,67 @@
-# PRODIGY_ML_02
+# K-Means Clustering: Customer Segmentation
 
-## Summary Analysis:
-### Cluster 1:
+## Project Overview
 
-Age: Approximately 43 years old.
-Income: Low income relative to other clusters ($31,100).
-Spending Score: Moderate spending score (55), indicating average engagement.
-Purchases: Relatively high purchasing frequency (about 43 purchases).
-Recency: Recent purchases (around 32 days since the last purchase).
+This project applies K-Means clustering to group customers of a retail store based on their purchase history. The goal is to identify distinct customer segments that can help the retail store in marketing, product recommendations, and customer retention strategies.
 
-### Cluster 2:
+## Dataset
 
-Age: Older customers, averaging about 93 years.
-Income: Moderate income ($55,500).
-Spending Score: Slightly lower spending score (49), suggesting lower engagement compared to Cluster 4.
-Purchases: Very high purchasing frequency (71 purchases).
-Recency: Long time since last purchase (approximately 101 days), indicating less recent engagement.
+The dataset used in this project contains 2500 observations of customer behavior, including the following features:
 
-### Cluster 3:
+- **Age**: Age of the customer.
+- **Annual Income (k$)**: Annual income of the customer in $1000s.
+- **Spending Score (1-100)**: Spending score assigned to the customer based on their purchasing behavior.
+- **Number of Purchases**: Total number of purchases made by the customer.
+- **Days Since Last Purchase**: Number of days since the customer last made a purchase.
 
-Age: About 46 years old, suggesting a middle-aged demographic.
-Income: Higher income level ($74,500).
-Spending Score: Good spending score (58), indicating decent customer engagement.
-Purchases: Fewer purchases compared to Cluster 1 and 4 (22 purchases).
-Recency: Moderately recent purchases (about 57 days).
+## Project Structure
 
-### Cluster 4:
+- **Data Preprocessing**: The dataset is preprocessed to handle missing values and scale the features to ensure that all variables contribute equally to the clustering algorithm.
+- **K-Means Clustering**: The K-Means algorithm is used to segment the customers. The optimal number of clusters is determined using the Elbow Method.
+- **Evaluation**: The model is evaluated using the silhouette score to assess the quality of the clusters.
+- **Cluster Analysis**: Each cluster is analyzed by examining the centroid values to understand the characteristics of the different customer segments.
 
-Age: Approximately 49 years old.
-Income: Moderate income level ($51,200).
-Spending Score: High spending score (64), indicating strong engagement.
-Purchases: Very high purchasing frequency (about 74 purchases).
-Recency: Recent purchases (about 75 days).
+## Methodology
 
-### Cluster 5:
+1. **Data Preprocessing**: 
+   - Handled missing values.
+   - Scaled the data using standardization.
+   
+2. **K-Means Clustering**:
+   - Applied the K-Means algorithm to group customers.
+   - Determined the number of clusters using the Elbow Method.
 
-Age: Unusually high average age (191 years), likely an outlier or erroneous value.
-Income: Very high income ($261,000), indicating affluent customers.
-Spending Score: Exceptionally high (119), showing very high engagement and spending behavior.
-Purchases: Extremely high number of purchases (255), suggesting these customers are very active.
-Recency: About 90 days since last purchase, indicating a relatively recent interaction.
-Insights:
+3. **Evaluation**:
+   - Calculated the **silhouette score** to measure how well the customers fit into their respective clusters.
+   
+4. **Centroid Analysis**:
+   - Analyzed the cluster centroids to describe the common characteristics of each segment.
+   
+5. **Visualization**:
+   - Created various visualizations, including scatter plots and radar charts, to display customer segmentation and centroid analysis.
 
+## Visualizations
 
-## Distinct Customer Segments:
+- **Scatter Plot**: Displays customer segments based on annual income and spending score, with centroids highlighted.
+- **Radar Chart**: Visualizes cluster centroids for a comparison of features like age, annual income, spending score, etc.
+- **Silhouette Plot**: Shows how well each data point fits into its cluster.
 
-Clusters 1 and 4 represent active and moderately engaged customers, while Cluster 2 represents a less engaged group with a significant number of purchases.
-Cluster 5 appears to be an outlier, suggesting that you may want to further investigate this segment due to its unusual characteristics.
-Engagement Levels:
+## Outputs
 
-Higher spending scores in Clusters 4 and 3 suggest these segments may be more receptive to targeted marketing or loyalty programs.
-Purchasing Behavior:
+- **centroids.csv**: The centroid values of each cluster saved as a CSV file.
+- **Silhouette Score**: Printed in the console after running the clustering model.
+- **Visualizations**: Plots will be displayed for customer segmentation and cluster characteristics.
 
-Cluster 5's exceptionally high number of purchases indicates a very engaged customer base, potentially valuable for high-ticket items or premium offerings.
-Income Considerations:
+## Conclusion
 
-Understanding the income levels in each cluster can help tailor marketing messages and product offerings to match the financial capabilities of each segment.
+This project successfully identifies customer segments using K-Means clustering. The clusters are evaluated using the silhouette score, and the characteristics of each cluster are analyzed to gain insights into customer behavior. These insights can help the retail store tailor its marketing and retention strategies to different customer groups.
+
+## Future Work
+
+- Explore other clustering algorithms such as DBSCAN or hierarchical clustering.
+- Incorporate additional features such as customer feedback or loyalty scores.
+- Perform A/B testing on different marketing strategies targeted at specific clusters.
+
+## License
+
+This project is licensed under the MIT License.
